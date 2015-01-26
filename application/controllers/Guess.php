@@ -7,26 +7,24 @@
  */
 
 /**
- * View for the "last" page
+ * Description of Guess
  *
  * @author Marc
  */
-class Welcome extends Application  {
-    
-    // Default consturctor for application
-    function __construct()
-    {
-        parent::__construct();
-    }
-    
-    // default view when page loads show last quote
-    function index()
+class Guess extends Application {
+    // default view when 'guess' is loaded.
+    public function index()
     {
         $this->data['pagebody'] = 'justone';
-        $source = $this->quotes->last();
+        $source = $this->quotes->get(4);
         // Merge the page with last quote
         $this->data = array_merge($this->data, $source);
         // render the page
         $this->render();
+    }
+    
+    function __construct()
+    {
+        parent::__construct();
     }
 }

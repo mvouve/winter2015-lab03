@@ -7,12 +7,11 @@
  */
 
 /**
- * Description of first
+ * Description of Bingo
  *
  * @author Marc
  */
-class first extends Application {
-    
+class Bingo extends Application{
     function __construct()
     {
         // invoke parent constructor
@@ -20,28 +19,21 @@ class first extends Application {
     }
     
     /*
-     * Returns Bob's quote
+     * Return 5th quote
      */
     function index()
     {
         $this->data['pagebody'] = 'justone';    // page displays only one quote
-        $source = $this->quotes->first();       
+        $source = $this->quotes->get(5);       
         $this->data = array_merge( $this->data, $source );
         $this->render();
     }
     
-    function zzz()
+    // Display wise quote
+    function wisdom()
     {
-        $this->data['pagebody'] = 'justone';
-        $source = $this->quotes->get(1);
-        $this->data = array_merge( $this->data, $source );
-        $this->render();
-    }
-    
-    function gimme()
-    {
-        $this->data['pagebody'] = 'justone';
-        $source = $this->quotes->get(3);
+        $this->data['pagebody'] = 'justone';    // page displays only one quote
+        $source = $this->quotes->get(6);       
         $this->data = array_merge( $this->data, $source );
         $this->render();
     }
